@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <h1 style="display:flex; justify-content: center;">Sanderson title generator</h1>
+    <script>
+        const prefix = ['Dawn', 'Edge', 'Ever', 'Fire', 'Dragon', 'Mist', 'Moon', 'Myth', 'Night', 'Oath', 'Sky', 'Star', 'Storm', 'Sun', 'War'];
+        const suffix = ['blood', 'born', 'breaker', 'bringer', 'dancer', 'heart', 'mancer', 'reach', 'shard', 'sight', 'walker', 'ward'];
+
+        function getRandomElement(arr) {
+            return arr[arr.length * Math.random() | 0];
+        }
+
+        function generateTitle() {
+            let generated = getRandomElement(prefix) + getRandomElement(suffix);
+            const title = document.getElementById('title');
+            title.textContent = generated;
+        }
+    </script>
+  </head>
+  <body>
+        <div style="display:flex; align-items: center; justify-content: center; margin: 2em;">
+          <button onClick="generateTitle()">Generate title</button>
+        </div>
+        <div id="title" style="display:flex; align-items: center; justify-content: center;"></div>
+  </body>
+</html>
